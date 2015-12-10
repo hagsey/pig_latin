@@ -24,12 +24,10 @@ class PigLatinTest < Minitest::Test
   end
 
   def test_word_beginning_with_qu
-    skip
     assert_equal 'eenquay', PigLatin.translate('queen')
   end
 
   def test_word_with_consonant_preceding_qu
-    skip
     assert_equal 'aresquay', PigLatin.translate('square')
   end
 
@@ -50,13 +48,11 @@ class PigLatinTest < Minitest::Test
     assert_equal 'ickquay astfay unray', PigLatin.translate('quick fast run')
   end
 
-  def test_word_beginning_with_ye
-    skip
+  def test_word_beginning_with_ye 
     assert_equal 'ellowyay', PigLatin.translate('yellow')
   end
 
   def test_word_beginning_with_yt
-    skip
     assert_equal 'yttriaay', PigLatin.translate('yttria')
   end
 

@@ -4,6 +4,7 @@ class PigLatin
   attr_accessor :word, :first_consonants, :rest_of_word
 
   VOWELS = ['a', 'e', 'i', 'o', 'u']
+  CONSONANTS = ['b']
   CODE_SOUND = 'ay'
   
   def initialize(word)
@@ -23,8 +24,6 @@ class PigLatin
   end
 
   def index_of_first_vowel
-    first_bit = []
-    second_bit = []
     array_of_word.each do |letter|
         return array_of_word.index(letter.to_s) if VOWELS.include?(letter)
     end
@@ -32,6 +31,8 @@ class PigLatin
 
   def index_of_word_chop
     if word.include?('qu')
+      index_of_first_vowel + 1
+    elsif word.start_with?('y') && VOWELS.exclude?(array_of_word[1])
       index_of_first_vowel + 1
     else
       index_of_first_vowel
